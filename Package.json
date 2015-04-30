@@ -1,0 +1,12 @@
+{
+    "name": "TestCenter",
+    "version": "0.0.1",
+    "description": "It is a Testing Center. We aim to develop it using SocketIO  ",
+    "dependencies": {
+        "socket.io": "latest",
+        "express": "latest",
+        "mongoose" : "latest",
+        "body-parser" : "latest"
+    },
+    "author": "Avengers"
+}
