@@ -1,0 +1,69 @@
+<html>
+  <head>
+  </head>
+
+  <body>
+    <!--Div that will hold the charts-->
+    <div id="chart_div"></div>
+    <div id="piechart_div"></div>
+
+        <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the barchart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Questions');
+        data.addColumn('number', 'Number of Correct Answers');
+        data.addRows([
+          ['Question 1', 3],
+          ['Question 2', 1],
+          ['Question 3', 1],
+          ['Question 4', 1],
+          ['Question 5', 2],
+          ['Question 6', 3],
+          ['Question 7', 1],
+          ['Question 8', 1],
+          ['Question 9', 1],
+          ['Question 10', 2],
+          ['Question 11', 3],
+          ['Question 12', 1],
+          ['Question 13', 1],
+          ['Question 14', 1],
+          ['Question 15', 2],
+          ['Question 16', 3],
+          ['Question 17', 1],
+          ['Question 18', 1],
+          ['Question 19', 1],
+          ['Question 20', 2]
+        ]);
+
+        // Set chart options
+        var options = {'title':'How many correct answers regarding to each question',
+                       'legend':'right',
+                       'is3D':true,
+                       'width':700,
+                       'height':500};
+
+        // Instantiate and draw charts, based on the defined options.
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+
+        var piechart = new google.visualization.PieChart(document.getElementById('piechart_div'));
+        piechart.draw(data, options);
+      }
+    </script>
+
+  </body>
+</html>
